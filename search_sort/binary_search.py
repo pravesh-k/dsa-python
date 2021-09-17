@@ -7,6 +7,7 @@
 lst = [2, 5, 9, 10, 19, 23, 34, 41, 45, 56, 88, 89, 98]
 value = 9
 
+# Iterative approach for Binary Search
 def binary_search_iterative(lst, val):
     left_index = 0
     right_index = len(lst)-1
@@ -24,6 +25,7 @@ def binary_search_iterative(lst, val):
             return -1
 
 
+# Recursive approach for Binary Search
 def binary_search_recursive(lst, left_index, right_index, val):
     
     if left_index<=right_index:
