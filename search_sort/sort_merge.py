@@ -11,17 +11,18 @@ arr = [64, 25, 12, 22, 11]
 def merge_sort(arr):
 
     if len(arr)>1:
-        mid_index = len(arr)//2
+        mid_index = len(arr)//2     #finding the mid_index of the array
 
-        L = arr[:mid_index]
+        L = arr[:mid_index]         #using temp arrays to store each of the array
         R = arr[mid_index:]
         
-        merge_sort(L)
+        merge_sort(L)               #recursive call to perform merge sort on left half as well as right half
         merge_sort(R)
 
         i = j = k = 0
         
-        while i<len(L) and j<len(R):
+                                        #merge operation:
+        while i<len(L) and j<len(R):    #basically copying the elements from two halves to the array after comparision
             if L[i] < R[j]:
                 arr[k] = L[i]
                 i += 1
@@ -30,12 +31,12 @@ def merge_sort(arr):
                 j += 1
             k += 1
         
-        while i<len(L):
+        while i<len(L):                 #copying the remaining elements from left half (if any)
             arr[k] = L[i]
             i += 1
             k += 1
 
-        while j<len(R):
+        while j<len(R):                 #copying the remaining elements from right half (if any)
             arr[k] = R[j]
             j += 1
             k += 1
