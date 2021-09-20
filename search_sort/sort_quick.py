@@ -40,6 +40,10 @@ print("Sorted array is\n", quick_sort(arr))
 ##  rely on temporary array and manipulation is done in the input array itself.
 #   The approach used below to implement quick sort uses O(log(n)) auxiliary space due to call stack.
 
+#   Refer to this url for step by step pictorial explanation.
+#   https://www.programiz.com/dsa/quick-sort
+
+
 array = [64, 25, 12, 22, 11, 33]
 
 def partition(arr, low, high):
