@@ -26,6 +26,10 @@ class Graph:
         self.adjList[v1].append(v2)
         self.adjList[v2].append(v1)
 
+    # degree of a vertex
+    def degreeVertex(self, node):
+        return len(self.adjList[node])
+
     # print the adjacency list
     def printAdjList(self):
         for node in self.nodes:
@@ -44,6 +48,9 @@ def main():
         g.addEdge(v1, v2)
 
     g.printAdjList()
+    
+    print("degree of node %d is %d"%(nodes[1], g.degreeVertex(nodes[1])), "\n")
+
 
 if __name__ == "__main__":
     main()
