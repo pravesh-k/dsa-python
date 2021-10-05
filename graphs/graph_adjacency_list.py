@@ -38,13 +38,29 @@ class Graph:
             print(node, ": ", self.adjList[node])
         print()
 
+    def bfsInGraph(self, node):
+
+        queue = [node]
+        visited = [node]
+
+        while queue:
+            curr = queue.pop(0)
+            print(curr, end=" ")
+
+            for neighbour in self.adjList[curr]:
+                if neighbour not in visited:
+                    queue.append(neighbour)
+                    visited.append(neighbour)
+        print()
+
 
 # driver code
 def main():
     nodes = [1,2,3,4,5]
     edges = [(1,2),(1,3),(2,3),(2,4),(2,5),(3,4),(4,5)]
-    g = Graph(nodes, isDirected = True)
-    g.printAdjList()
+
+    g = Graph(nodes, isDirected = False)
+    # g.printAdjList()
 
     for v1, v2 in edges:
         g.addEdge(v1, v2)
@@ -52,6 +68,9 @@ def main():
     g.printAdjList()
     
     print("degree of node %d is %d"%(nodes[1], g.degreeVertex(nodes[1])), "\n")
+
+    print("Breadth first search for the above graph is:\n")
+    g.bfsInGraph(1)
 
 
 if __name__ == "__main__":
