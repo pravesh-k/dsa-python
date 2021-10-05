@@ -7,8 +7,9 @@
 
 class Graph:
     
-    def __init__(self, nodes):
+    def __init__(self, nodes, isDirected = False):
         self.nodes = nodes
+        self.isDirected = isDirected
 
         # creating an empty dictionary for representing a graph
         self.adjList = {}
@@ -24,7 +25,8 @@ class Graph:
             return
 
         self.adjList[v1].append(v2)
-        self.adjList[v2].append(v1)
+        if not self.isDirected:
+            self.adjList[v2].append(v1)
 
     # degree of a vertex
     def degreeVertex(self, node):
@@ -41,7 +43,7 @@ class Graph:
 def main():
     nodes = [1,2,3,4,5]
     edges = [(1,2),(1,3),(2,3),(2,4),(2,5),(3,4),(4,5)]
-    g = Graph(nodes)
+    g = Graph(nodes, isDirected = True)
     g.printAdjList()
 
     for v1, v2 in edges:
