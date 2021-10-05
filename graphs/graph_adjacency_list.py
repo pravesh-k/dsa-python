@@ -53,6 +53,20 @@ class Graph:
                     visited.append(neighbour)
         print()
 
+    def dfs(self, node, visited):
+        if node not in visited:
+            visited.append(node)
+            print(node, end=" ")
+
+            for neighbour in self.adjList[node]:
+                self.dfs(neighbour, visited)
+    
+
+    def dfsInGraph(self, node):
+        visited = []
+        self.dfs(node, visited)
+        print()
+        
 
 # driver code
 def main():
@@ -71,7 +85,8 @@ def main():
 
     print("Breadth first search for the above graph is:\n")
     g.bfsInGraph(1)
-
+    print("Depth first search for the above graph is:\n")
+    g.dfsInGraph(1)
 
 if __name__ == "__main__":
     main()
