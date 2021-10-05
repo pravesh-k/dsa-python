@@ -38,6 +38,7 @@ class Graph:
             print(node, ": ", self.adjList[node])
         print()
 
+    # breadth first search in graph
     def bfsInGraph(self, node):
 
         queue = [node]
@@ -53,6 +54,7 @@ class Graph:
                     visited.append(neighbour)
         print()
 
+    # utility function for bfs
     def dfs(self, node, visited):
         if node not in visited:
             visited.append(node)
@@ -61,7 +63,7 @@ class Graph:
             for neighbour in self.adjList[node]:
                 self.dfs(neighbour, visited)
     
-
+    # depth first search in graph
     def dfsInGraph(self, node):
         visited = []
         self.dfs(node, visited)
