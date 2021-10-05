@@ -16,8 +16,9 @@ class Graph:
     def addEdge(self, v1, v2):
         # if both vertices are identical, exit the operation
         if v1 == v2:
-            print("Same vertex %d and %d" %(v1, v2))
+            print("identical vertices v1=%d and v2=%d passed\n"%(v1, v2))
             return
+
         self.adjMatrix[v1][v2] = 1
         self.adjMatrix[v2][v1] = 1 
 
@@ -25,8 +26,9 @@ class Graph:
     def removeEdge(self, v1, v2):
         # if both vertices are identical, exit the operation
         if v1 == v2:
-            print("Same vertex %d and %d" %(v1, v2))
+            print("identical vertices v1=%d and v2=%d passed\n"%(v1, v2))
             return
+            
         self.adjMatrix[v1][v2] = 0
         self.adjMatrix[v2][v1] = 0
     
