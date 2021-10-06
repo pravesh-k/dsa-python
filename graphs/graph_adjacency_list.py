@@ -35,7 +35,7 @@ class Graph:
     # print the adjacency list
     def printAdjList(self):
         for node in self.nodes:
-            print(node, ": ", self.adjList[node])
+            print(node, ":", self.adjList[node])
         print()
 
     # breadth first search in graph
@@ -54,20 +54,15 @@ class Graph:
                     visited.append(neighbour)
         print()
 
-    # utility function for bfs
-    def dfs(self, node, visited):
+    # depth first search in graph
+    def dfsInGraph(self, node, visited=set()):
+
         if node not in visited:
-            visited.append(node)
+            visited.add(node)
             print(node, end=" ")
 
             for neighbour in self.adjList[node]:
-                self.dfs(neighbour, visited)
-    
-    # depth first search in graph
-    def dfsInGraph(self, node):
-        visited = []
-        self.dfs(node, visited)
-        print()
+                self.dfsInGraph(neighbour, visited)
         
 
 # driver code
@@ -87,6 +82,7 @@ def main():
 
     print("Breadth first search for the above graph is:\n")
     g.bfsInGraph(1)
+    
     print("Depth first search for the above graph is:\n")
     g.dfsInGraph(1)
 
