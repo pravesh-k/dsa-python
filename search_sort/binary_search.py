@@ -9,10 +9,10 @@ value = 7
 
 # Iterative approach for Binary Search
 def binary_search_iterative(lst, val):
-    left_index = 0
-    right_index = len(lst)-1
+    
+    left_index, right_index = 0, len(lst)-1
 
-    while(left_index<=right_index):
+    while left_index<=right_index:
 
         mid_index = (left_index+right_index)//2
         if lst[mid_index] == val:
