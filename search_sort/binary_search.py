@@ -5,16 +5,13 @@
 
 
 lst = [2, 5, 9, 10, 19, 23, 34, 41, 45, 56, 88, 89, 98]
-value = 100
+value = 7
 
 # Iterative approach for Binary Search
 def binary_search_iterative(lst, val):
     left_index = 0
     right_index = len(lst)-1
 
-    if val > lst[right_index] or val < lst[left_index]:
-        return -1
-        
     while(left_index<=right_index):
 
         mid_index = (left_index+right_index)//2
@@ -24,6 +21,8 @@ def binary_search_iterative(lst, val):
             right_index = mid_index-1
         else:
             left_index=mid_index+1
+    
+    return -1
 
 
 # Recursive approach for Binary Search
