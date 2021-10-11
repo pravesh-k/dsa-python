@@ -5,6 +5,9 @@
 # Below is the implementation of a Binary Tree (BT) in Python3 along with
 # methods to traverse the nodes of the tree
 
+
+from queue import Queue
+
 # Class to represent a node of tree
 class Node:
 
@@ -37,6 +40,23 @@ def postOrder_traversal(root):
         postOrder_traversal(root.right)
         print(root.data, end=" ")
 
+# Breadth First Search(BFS) in Tree/ Level Order Traversal using recursive logic
+def bfs_recur(root, q):
+
+    if q.empty():
+        return 
+
+    root = q.get()
+    print(root.data, end=" ")
+    
+    if root.left:
+        q.put(root.left)
+    if root.right:
+        q.put(root.right)
+
+    bfs_recur(root, q)
+
+
 
 # driver code
 def main():
@@ -56,6 +76,10 @@ def main():
     print("\nPostorder traversal ")
     postOrder_traversal(root)
 
+    print("\nBreadth First Search using recursive logic ")
+    q = Queue(maxsize = 0)
+    q.put(root)
+    bfs_recur(root,q)
 
 if __name__ == "__main__":
 
