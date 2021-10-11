@@ -5,7 +5,6 @@
 #   Space complexity: O(n) where n is the number of nodes
 
 from queue import Queue
-import queue
 
 #creating node structure
 class Node:
@@ -24,7 +23,7 @@ def breadth_first_search_recursive(root, q):
     root = q.get()              #pop the first element from queue and print
     print(root.data,end=" ")
 
-    if root.left != None:       #if root has left and right chilrens, put to queue
+    if root.left != None:       #if root has left and right childrens, put to queue
         q.put(root.left)
     if root.right != None:
         q.put(root.right)
